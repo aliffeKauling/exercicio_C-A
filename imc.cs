@@ -6,9 +6,7 @@ namespace Exercicio_C_A
     {
         public float imc;
        public float imcC(float A, float P)
-        {
-                    
-
+        {          
             imc = (P / (A *A));
 
             if (imc < 18.5)
@@ -41,8 +39,6 @@ namespace Exercicio_C_A
             return imc;
         
         }
-
-
 
     }
 }

@@ -15,6 +15,7 @@ namespace Exercicio_C_A
             double n1;
             double n2;
             double n3;
+        
             bool validacao = true;
             Program program = new Program();
 
@@ -87,8 +88,26 @@ namespace Exercicio_C_A
 
                         break;
                     case 5:
+                        int cachorro = 0, gato = 0, peixe = 0;
+                        string[] n = new string[5];
+                        string[] t = new string[5];  
+                        for(int i=0; i<5; i++){
+                            Console.WriteLine("Nome do pet {0}", i+1);
+                            n[i] = Console.ReadLine(); 
+                            Console.WriteLine("Tipo do pet {0}", i+1);
+                            t[i] = Console.ReadLine(); 
 
-
+                            if(t[i] == "cachorro"){
+                                cachorro = cachorro+1;
+                            }else if (t[i] == "gato"){
+                                gato = gato +1;
+                            }else{
+                                peixe = peixe +1;
+                            }
+                            Animal animal = new Animal(n[i], t[i]);
+                        }
+                        Console.WriteLine("{0} cachorros;\n{1} gatos;\n{2} peixes.", cachorro, gato, peixe);
+                        
 
                         break;
                     case 6:
@@ -108,19 +127,3 @@ namespace Exercicio_C_A
 
     }
 }
-
-
-// Criar um programa que leia o valor de três notas escolares de um aluno. Calcular a média aritmética e apresentar na tela a mensagem “Aprovado” se 
-//a média obtida for maior ou igual a 7; 
-//caso contrário, o programa deve solicitar a nota de exame do aluno e calcular uma nova média aritmética entre a nota do exame e a primeira média aritmética. 
-//Se o valor da nova média for maior ou igual a 5, apresentar na tela a mensagem “Aprovado em exame”; caso contrário, apresentar a mensagem “Reprovado”. 
-//Informar junto com cada mensagem o valor da média obtida.
-
-//Crie um algoritmo/programa no qual o usuário deverá informar o nome e o tipo de cinco animais de estimação. 
-//O programa deverá exibir na tela para o usuário quantos cachorros, gatos e peixes foram informados.
-//Regras que deverão ser seguidas para a implementação do algoritmo:
-//Os únicos tipos de animais válidos são cachorro, gato e peixe.
-//Caso seja informado um tipo diferente, o programa deverá definir o tipo do animal como peixe.
-//É obrigatório criar uma classe para representar o animal.
-//A classe deverá possuir dois dados privados (propriedades) para representar as características do animal.
-//A classe deverá possuir métodos de acesso para permitir que o usuário armazene/leia os dados dos dois dados privados (propriedades).

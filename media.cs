@@ -4,12 +4,14 @@ namespace Exercicio_C_A
 {
     public class Media
     {
+        //Atributos
         public double media;
-        double nMedia;
         double mediaExame;
         public string resultado;
 
 
+
+        //Métodos    
         public string calculoMedia(double n1, double n2, double n3){
             media = (n1 + n2 + n3)/3;
 

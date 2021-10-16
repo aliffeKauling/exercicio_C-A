@@ -1,19 +1,31 @@
+using System;
+
 namespace Exercicio_C_A
 {
     public class Animal
     {
+
+        //Atributos
         private string nome;
         private string tipo;
 
+
+        //Método Construtor
+        public Animal(string nome, string tipo){
+            this.setNome(nome);
+            adicionarTipo(tipo);
+        }
+
+        //Função validadora
         public void adicionarTipo(string tipo){
-            if (tipo != "cachorro"){
-                if(tipo != "gato"){
-                }if(tipo != "peixe"){
-                    setTipo("peixe");
-                }
+            if (tipo != "cachorro" || tipo != "gato" || tipo != "peixe"){
+                this.setTipo("peixe");            
+            }else{
+                this.setTipo(tipo);
             }
         }
 
+        //Getters e Setters
         public string getNome()
         {
             return this.nome;
@@ -31,8 +43,6 @@ namespace Exercicio_C_A
         {
             this.tipo = tipo;
         }
-
-
 
 
 
