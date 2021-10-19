@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Exercicio_C_A
 {
@@ -49,6 +50,7 @@ namespace Exercicio_C_A
 
                         imc.imcC(A, P);
                         Console.WriteLine("Seu IMC é: {0}", imc.imc);
+                        Console.WriteLine("Sua classificação é: {0}", imc.classificacao);
                        
                         break;
                     case 2:
@@ -90,12 +92,15 @@ namespace Exercicio_C_A
                     case 5:
                         int cachorro = 0, gato = 0, peixe = 0;
                         string[] n = new string[5];
-                        string[] t = new string[5];  
+                        string[] t = new string[5]; 
+                        List<Animal> animais = new List<Animal>();
+                       
                         for(int i=0; i<5; i++){
                             Console.WriteLine("Nome do pet {0}", i+1);
                             n[i] = Console.ReadLine(); 
                             Console.WriteLine("Tipo do pet {0}", i+1);
                             t[i] = Console.ReadLine(); 
+                            
 
                             if(t[i] == "cachorro"){
                                 cachorro = cachorro+1;
@@ -104,8 +109,18 @@ namespace Exercicio_C_A
                             }else{
                                 peixe = peixe +1;
                             }
-                            Animal animal = new Animal(n[i], t[i]);
+                            Animal animalia = new Animal(n[i], t[i]);
+                            animais.Add(animalia);
+
+
                         }
+                        Console.WriteLine("Animais:\n");  
+                        foreach (var animal in animais)
+                        {
+                            Console.WriteLine("Nome:{0}", animal.getNome());
+                            Console.WriteLine("Nome:{0}", animal.getTipo());  
+                        }    
+                        Console.WriteLine("Você digitou:\n");                        
                         Console.WriteLine("{0} cachorros;\n{1} gatos;\n{2} peixes.", cachorro, gato, peixe);
                         
 
