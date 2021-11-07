@@ -1,5 +1,3 @@
-using System;
-
 namespace Exercicio_C_A
 {
     public class Animal
@@ -9,11 +7,10 @@ namespace Exercicio_C_A
         private string nome;
         private string tipo;
 
-
         //Método Construtor
         public Animal(string nome, string tipo){
             this.setNome(nome);
-            adicionarTipo(tipo);
+            adicionarTipo(tipo);          
         }
 
         //Função validadora
@@ -43,8 +40,5 @@ namespace Exercicio_C_A
         {
             this.tipo = tipo;
         }
-
-
-
     }
 }

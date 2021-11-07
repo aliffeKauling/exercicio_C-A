@@ -4,10 +4,18 @@ namespace Exercicio_C_A
 {
     public class Imc
     {
+        float A;
+        float P;
         public float imc;
         public string classificacao;
-       public float imcC(float A, float P)
-        {          
+       public float imcC()
+        {       
+
+            Console.WriteLine("Digite seu peso");
+            P = float.Parse(Console.ReadLine());
+            Console.WriteLine("Digite sua altura");
+            A = float.Parse(Console.ReadLine());
+
             imc = (P / (A *A));
 
             if (imc < 18.5)

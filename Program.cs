@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Exercicio_C_A
 {
@@ -8,15 +9,6 @@ namespace Exercicio_C_A
         static void Main(string[] args)
         {
             int opcao;
-            double funcionario;
-            double minimo;
-            double raio;
-            float A;
-            float P;
-            double n1;
-            double n2;
-            double n3;
-        
             bool validacao = true;
             Program program = new Program();
 
@@ -42,52 +34,25 @@ namespace Exercicio_C_A
                 {
                     case 1:
                         Imc imc = new Imc();
-
-                        Console.WriteLine("Digite seu peso");
-                        P = float.Parse(Console.ReadLine());
-                        Console.WriteLine("Digite sua altura");
-                        A = float.Parse(Console.ReadLine());
-
-                        imc.imcC(A, P);
+                        imc.imcC();
                         Console.WriteLine("Seu IMC é: {0}", imc.imc);
-                        Console.WriteLine("Sua classificação é: {0}", imc.classificacao);
-                       
+                        Console.WriteLine("Sua classificação é: {0}", imc.classificacao);                       
                         break;
                     case 2:
-
-                    Salario salario = new Salario();
-                
-                        Console.WriteLine("Digite o salário do funcionário");
-                        funcionario = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine("Digite o salário mínimo");
-                        minimo = Convert.ToDouble(Console.ReadLine());
-                        salario.salarioM(funcionario, minimo);
+                    Salario salario = new Salario();               
+                        salario.salarioM();
                         Console.WriteLine("A quantidade de salários do funcionário é: {0}", salario.getQtsalarios());
-
                         break;
                     case 3:
-                    Volume volume = new Volume();
-                        Console.WriteLine("Digite o valor do raio");
-                        raio = Convert.ToDouble(Console.ReadLine()); 
-                        volume.volumeE(raio);                   
-                        Console.WriteLine("O volume da esfera é {0} ", volume.resultado);
-
-                        
+                    Volume volume = new Volume();                        
+                        volume.volumeE();                   
+                        Console.WriteLine("O volume da esfera é {0} ", volume.resultado);                       
                         break;
                     case 4:
                     Media media = new Media();
-                
-                        Console.WriteLine("Digite a primeira nota");
-                        n1 = Convert.ToDouble(Console.ReadLine()); 
-                        Console.WriteLine("Digite a segunda nota");
-                        n2 = Convert.ToDouble(Console.ReadLine());   
-                        Console.WriteLine("Digite a terceira nota");
-                        n3 = Convert.ToDouble(Console.ReadLine());  
-                        media.calculoMedia(n1, n2, n3);
-
-                        Console.WriteLine("Média {0}", media.media);
-                        Console.WriteLine("Resultado {0}", media.resultado);
-
+                    media.calculoMedia();
+                    Console.WriteLine("Média {0}", media.media);
+                    Console.WriteLine("Resultado {0}", media.resultado);
                         break;
                     case 5:
                         int cachorro = 0, gato = 0, peixe = 0;
@@ -97,9 +62,9 @@ namespace Exercicio_C_A
                        
                         for(int i=0; i<5; i++){
                             Console.WriteLine("Nome do pet {0}", i+1);
-                            n[i] = Console.ReadLine(); 
+                            n[i] = Console.ReadLine().ToLower(); 
                             Console.WriteLine("Tipo do pet {0}", i+1);
-                            t[i] = Console.ReadLine(); 
+                            t[i] = Console.ReadLine().ToLower(); 
                             
 
                             if(t[i] == "cachorro"){
@@ -118,9 +83,10 @@ namespace Exercicio_C_A
                         foreach (var animal in animais)
                         {
                             Console.WriteLine("Nome:{0}", animal.getNome());
-                            Console.WriteLine("Nome:{0}", animal.getTipo());  
-                        }    
-                        Console.WriteLine("Você digitou:\n");                        
+                            Console.WriteLine("Tipo:{0}", animal.getTipo());  
+                        }
+                            
+                        Console.WriteLine("\nVocê digitou:\n");                        
                         Console.WriteLine("{0} cachorros;\n{1} gatos;\n{2} peixes.", cachorro, gato, peixe);
                         
 
@@ -129,16 +95,13 @@ namespace Exercicio_C_A
                         validacao = false;
                         break;
                     default:
-                        Console.WriteLine("Opção invalida. Escolha uma das 4 operações");
+                        Console.WriteLine("Opção invalida. Escolha uma das 6 operações");
                         break;
                 }
-                Console.WriteLine("Deseja realizar alguma operação? Se sim, aperte ENTER");
+                Console.WriteLine("Deseja realizar alguma operação? Se sim, aperte ENTER.");
                 Console.ReadLine();
                 Console.Clear();
             } while (validacao);
-        }
-
-        
-
+        }       
     }
 }

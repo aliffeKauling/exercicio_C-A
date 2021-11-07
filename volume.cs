@@ -1,10 +1,19 @@
+using System;
+
 namespace Exercicio_C_A
 {
-    public class Volume
+    
+public class Volume
     {
+        double raio;
         public double resultado;
-        public double volumeE(double raio){
-        resultado=(4.0/3)*3.14*(raio*raio*raio);
+        public double raioElevado;
+        
+        public double volumeE(){
+        raioElevado = Math.Pow(raio, 3);
+        Console.WriteLine("Digite o valor do raio");                
+        raio = Convert.ToDouble(Console.ReadLine()); 
+        resultado=(4 * Math.PI * raioElevado)/3;
         return resultado;
         }    
     }
